@@ -1,4 +1,15 @@
 ## Setup
+
+1. **Supabase Setup**
+    Create a supabase environment & project, then configure & migrate. https://supabase.com/dashboard
+
+    ```
+    cd backend/
+    supabase link --project-ref <PROJECT_REF>
+    supabase config push  # applies config.toml
+    supbase db push       # remote migration
+    ```
+
 1. **Enable required APIs**
    ```bash
    PROJECT=suna-deployment-1749244914
@@ -205,3 +216,4 @@ Override defaults by supplying a modified `*.tfvars` file or with `-var` flags.
 - Parameterized disk management
 - Improved startup scripts
 - Module refactoring for reuse
+- Issue with .env files - I need to populate the public IP manually after terraform assigns one

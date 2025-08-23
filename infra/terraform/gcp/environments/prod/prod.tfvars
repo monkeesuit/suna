@@ -1,10 +1,10 @@
 project     = "suna-deployment-1749244914"
 environment = "prod"
+name        = "suna-v2"
 
 region = "us-central1"
 zone   = "us-central1-a"
 
-name        = "suna-v2"
 subnet_cidr = "10.0.0.0/24"
 
 instance_tags = ["suna"]
@@ -16,7 +16,7 @@ root_disk_size_gb = 15
 opt_disk_size_gb  = 15
 var_disk_size_gb  = 30
 
-repo_url            = "https://github.com/kortix-ai/suna.git"
+repo_url            = "https://github.com/monkeesuit/suna.git"
 backend_secret      = "suna-env-prod"
 frontend_secret     = "suna-frontend-env-prod"
 docker_compose_args = ""

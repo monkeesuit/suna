@@ -22,7 +22,8 @@ deb [signed-by=/etc/apt/keyrings/google-cloud.gpg] \
 EOF
 
 apt-get update
-apt-get install -y git python3 docker-ce docker-ce-cli containerd.io docker-compose-plugin google-cloud-cli
+add-apt-repository -y ppa:deadsnakes/ppa
+apt-get install -y git python3.12 python3.12-venv python3.12-dev docker-ce docker-ce-cli containerd.io docker-compose-plugin google-cloud-cli
 
 systemctl enable --now docker
 

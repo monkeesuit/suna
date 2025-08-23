@@ -11,4 +11,10 @@
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.tabSize": 2, // optionally
   },
+  "files.exclude": {
+    "**/.vscode/": true,
+    "**/.cursor": true,
+    "**/.github": true,
+    "**/.terraform.lock.hcl": true
+  }
 }
