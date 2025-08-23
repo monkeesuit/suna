@@ -200,6 +200,11 @@ Key variables defined in `variables.tf`:
 Override defaults by supplying a modified `*.tfvars` file or with `-var` flags.
 
 ## Troubleshooting
+- **Clout Init Logs** - Logs of the cloud-init scripts
+  ```bash
+  tail -f /var/log/cloud-init-output.log
+  ```
+
 - **Missing APIs** – Terraform errors such as `accessNotConfigured` indicate APIs are disabled.
   ```bash
   gcloud services enable cloudresourcemanager.googleapis.com iam.googleapis.com \
