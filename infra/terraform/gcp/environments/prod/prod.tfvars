@@ -17,7 +17,7 @@ opt_disk_size_gb  = 15
 var_disk_size_gb  = 30
 
 repo_url            = "https://github.com/monkeesuit/suna.git"
-backend_secret      = "suna-env-prod"
+backend_secret      = "suna-backend-env-prod"
 frontend_secret     = "suna-frontend-env-prod"
 docker_compose_args = ""
 

@@ -30,7 +30,9 @@ systemctl enable --now docker
 git clone ${repo_url} /opt/suna
 
 gcloud secrets versions access latest --secret="${backend_secret}" > /opt/suna/backend/.env
+echo -e "\\n\\nADDITIONAL_ORIGINS=http://${public_ip}:3000\\n" >> /opt/suna/backend/.env
 gcloud secrets versions access latest --secret="${frontend_secret}" > /opt/suna/frontend/.env.local
+echo -e "\\n\\nNEXT_PUBLIC_BACKEND_URL=http://${public_ip}:8000/api\\n" >> /opt/suna/frontend/.env.local
 
 cd /opt/suna
 docker compose up -d

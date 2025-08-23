@@ -84,6 +84,7 @@ locals {
       backend_secret      = var.backend_secret,
       frontend_secret     = var.frontend_secret,
       docker_compose_args = var.docker_compose_args,
+      public_ip           = google_compute_address.vm_ip.address,
     }),
   }
 }

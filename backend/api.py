@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -131,6 +132,8 @@ async def log_requests_middleware(request: Request, call_next):
 
 # Define allowed origins based on environment
 allowed_origins = ["https://www.suna.so", "https://suna.so"]
+additional_origins = os.getenv("ADDITIONAL_ORIGINS", "")
+allowed_origins.extend([o.strip() for o in additional_origins.split(",") if o.strip()])
 allow_origin_regex = None
 
 # Add staging-specific origins

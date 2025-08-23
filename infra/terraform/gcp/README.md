@@ -26,6 +26,7 @@
      --display-name="Terraform Service Account"
 
    SA="terraform@${PROJECT}.iam.gserviceaccount.com"
+
    gcloud projects add-iam-policy-binding $PROJECT \
      --member="serviceAccount:${SA}" \
      --role="roles/compute.networkAdmin"
@@ -83,15 +84,19 @@
    ```
 
 4. **Manage secrets**
+  Create your backend and frontend .env files then push into a GCP secret
+
    ```bash
-   gcloud secrets create suna-env-prod \
+   gcloud secrets create suna-backend-env-prod \
      --replication-policy="automatic" \
-     --data-file=./suna.env
-   gcloud secrets versions access latest --secret=suna-env-prod
+     --data-file=./backend.env
+
+   gcloud secrets versions access latest --secret=suna-backend-env-prod
 
    gcloud secrets create suna-frontend-env-prod \
      --replication-policy="automatic" \
-     --data-file=./suna.frontend.env
+     --data-file=./frontend.env
+
    gcloud secrets versions access latest --secret=suna-frontend-env-prod
 
    # Updating secret
